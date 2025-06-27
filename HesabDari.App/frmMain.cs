@@ -11,14 +11,17 @@ using System.Windows.Forms;
 using HesabDari.Utility.Convertor;
 using HesabDari.ViewModel;
 using HesabDari.Business;
+using HesabDari.DataLayer;
 
 namespace HesabDari.App
 {
     public partial class frmMain : Form
     {
+        HesabDariEntitiesnew db = new HesabDariEntitiesnew();
         public frmMain()
         {
             InitializeComponent();
+            GetPersonInfo();
 
         }
 
@@ -101,6 +104,29 @@ namespace HesabDari.App
             Report();
         }
 
+        private void groupBox2_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        public void GetPersonInfo()
+        {
+            var list=db.Accounting.ToList();
+            if (list.Any())
+            {
+                var maxAmount = list.OrderByDescending(a=>a.Amount).First();
+                var maxPerson = db.Persons.First(p => p.PersonId == maxAmount.PersonId);
+
+                lblName.Text = maxPerson.Name;
+                lblAmount.Text = "- " + maxAmount.Amount.ToString();
+
+                var minAmount = list.OrderBy(a => a.Amount).First();
+                var minPerson = db.Persons.First(p => p.PersonId == minAmount.PersonId);
+
+                lblMinName.Text = minPerson.Name;
+                lblminAmount.Text = "+ " + minAmount.Amount.ToString();
+            }
+        }
     }
 }
 

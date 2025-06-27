@@ -56,11 +56,19 @@
             this.label1 = new System.Windows.Forms.Label();
             this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.grbIndebtedness = new System.Windows.Forms.GroupBox();
+            this.lblAmount = new System.Windows.Forms.Label();
+            this.lblName = new System.Windows.Forms.Label();
+            this.grbCreditor = new System.Windows.Forms.GroupBox();
+            this.lblminAmount = new System.Windows.Forms.Label();
+            this.lblMinName = new System.Windows.Forms.Label();
             this.toolStrip1.SuspendLayout();
             this.toolStrip2.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.grbIndebtedness.SuspendLayout();
+            this.grbCreditor.SuspendLayout();
             this.SuspendLayout();
             // 
             // toolStrip1
@@ -210,7 +218,6 @@
             this.statusStrip1.Size = new System.Drawing.Size(784, 22);
             this.statusStrip1.TabIndex = 3;
             this.statusStrip1.Text = "statusStrip1";
-            //this.statusStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.StatusStrip1_ItemClicked);
             // 
             // lblDate
             // 
@@ -247,7 +254,7 @@
             // 
             this.lblBalance.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.lblBalance.ForeColor = System.Drawing.Color.DarkBlue;
-            this.lblBalance.Location = new System.Drawing.Point(6, 68);
+            this.lblBalance.Location = new System.Drawing.Point(7, 65);
             this.lblBalance.Name = "lblBalance";
             this.lblBalance.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.lblBalance.Size = new System.Drawing.Size(175, 19);
@@ -258,7 +265,7 @@
             // 
             this.lblDebt.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.lblDebt.ForeColor = System.Drawing.Color.DarkBlue;
-            this.lblDebt.Location = new System.Drawing.Point(6, 42);
+            this.lblDebt.Location = new System.Drawing.Point(7, 41);
             this.lblDebt.Name = "lblDebt";
             this.lblDebt.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.lblDebt.Size = new System.Drawing.Size(175, 19);
@@ -269,10 +276,10 @@
             // 
             this.lblCredite.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.lblCredite.ForeColor = System.Drawing.Color.DarkBlue;
-            this.lblCredite.Location = new System.Drawing.Point(7, 14);
+            this.lblCredite.Location = new System.Drawing.Point(6, 15);
             this.lblCredite.Name = "lblCredite";
             this.lblCredite.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblCredite.Size = new System.Drawing.Size(174, 21);
+            this.lblCredite.Size = new System.Drawing.Size(116, 21);
             this.lblCredite.TabIndex = 0;
             this.lblCredite.Text = "0";
             // 
@@ -281,9 +288,9 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.DarkBlue;
-            this.label3.Location = new System.Drawing.Point(216, 71);
+            this.label3.Location = new System.Drawing.Point(200, 68);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(88, 16);
+            this.label3.Size = new System.Drawing.Size(87, 16);
             this.label3.TabIndex = 0;
             this.label3.Text = "مانده (ریال) :";
             // 
@@ -292,9 +299,9 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.DarkBlue;
-            this.label2.Location = new System.Drawing.Point(178, 45);
+            this.label2.Location = new System.Drawing.Point(162, 44);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(126, 16);
+            this.label2.Size = new System.Drawing.Size(125, 16);
             this.label2.TabIndex = 0;
             this.label2.Text = "پرداختی ها (ریال) :";
             // 
@@ -303,9 +310,9 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.DarkBlue;
-            this.label1.Location = new System.Drawing.Point(182, 19);
+            this.label1.Location = new System.Drawing.Point(166, 17);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(122, 16);
+            this.label1.Size = new System.Drawing.Size(121, 16);
             this.label1.TabIndex = 0;
             this.label1.Text = "دریافتی ها (ریال) :";
             // 
@@ -319,11 +326,81 @@
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
             // 
+            // grbIndebtedness
+            // 
+            this.grbIndebtedness.Controls.Add(this.lblAmount);
+            this.grbIndebtedness.Controls.Add(this.lblName);
+            this.grbIndebtedness.Location = new System.Drawing.Point(444, 217);
+            this.grbIndebtedness.Name = "grbIndebtedness";
+            this.grbIndebtedness.Size = new System.Drawing.Size(328, 53);
+            this.grbIndebtedness.TabIndex = 5;
+            this.grbIndebtedness.TabStop = false;
+            this.grbIndebtedness.Text = "بالاترین بدهکاری";
+            this.grbIndebtedness.Enter += new System.EventHandler(this.groupBox2_Enter);
+            // 
+            // lblAmount
+            // 
+            this.lblAmount.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.lblAmount.ForeColor = System.Drawing.Color.Crimson;
+            this.lblAmount.Location = new System.Drawing.Point(8, 19);
+            this.lblAmount.Name = "lblAmount";
+            this.lblAmount.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lblAmount.Size = new System.Drawing.Size(174, 21);
+            this.lblAmount.TabIndex = 0;
+            this.lblAmount.Text = "0";
+            // 
+            // lblName
+            // 
+            this.lblName.AutoSize = true;
+            this.lblName.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblName.ForeColor = System.Drawing.Color.Crimson;
+            this.lblName.Location = new System.Drawing.Point(228, 24);
+            this.lblName.Name = "lblName";
+            this.lblName.Size = new System.Drawing.Size(59, 16);
+            this.lblName.TabIndex = 0;
+            this.lblName.Text = "بدهکار : ";
+            // 
+            // grbCreditor
+            // 
+            this.grbCreditor.Controls.Add(this.lblminAmount);
+            this.grbCreditor.Controls.Add(this.lblMinName);
+            this.grbCreditor.Location = new System.Drawing.Point(444, 276);
+            this.grbCreditor.Name = "grbCreditor";
+            this.grbCreditor.Size = new System.Drawing.Size(328, 64);
+            this.grbCreditor.TabIndex = 5;
+            this.grbCreditor.TabStop = false;
+            this.grbCreditor.Text = "بالاترین بستانکاری";
+            this.grbCreditor.Enter += new System.EventHandler(this.groupBox2_Enter);
+            // 
+            // lblminAmount
+            // 
+            this.lblminAmount.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.lblminAmount.ForeColor = System.Drawing.Color.DarkBlue;
+            this.lblminAmount.Location = new System.Drawing.Point(7, 28);
+            this.lblminAmount.Name = "lblminAmount";
+            this.lblminAmount.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lblminAmount.Size = new System.Drawing.Size(174, 21);
+            this.lblminAmount.TabIndex = 0;
+            this.lblminAmount.Text = "0";
+            // 
+            // lblMinName
+            // 
+            this.lblMinName.AutoSize = true;
+            this.lblMinName.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMinName.ForeColor = System.Drawing.Color.DarkBlue;
+            this.lblMinName.Location = new System.Drawing.Point(217, 30);
+            this.lblMinName.Name = "lblMinName";
+            this.lblMinName.Size = new System.Drawing.Size(70, 16);
+            this.lblMinName.TabIndex = 0;
+            this.lblMinName.Text = "بستانکار : ";
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 461);
+            this.Controls.Add(this.grbCreditor);
+            this.Controls.Add(this.grbIndebtedness);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.pictureBox1);
@@ -345,6 +422,10 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.grbIndebtedness.ResumeLayout(false);
+            this.grbIndebtedness.PerformLayout();
+            this.grbCreditor.ResumeLayout(false);
+            this.grbCreditor.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -378,6 +459,12 @@
         private System.Windows.Forms.ToolStripLabel toolStripLabel1;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+        private System.Windows.Forms.GroupBox grbIndebtedness;
+        private System.Windows.Forms.GroupBox grbCreditor;
+        private System.Windows.Forms.Label lblminAmount;
+        private System.Windows.Forms.Label lblMinName;
+        private System.Windows.Forms.Label lblAmount;
+        private System.Windows.Forms.Label lblName;
     }
 }
 
